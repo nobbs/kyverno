@@ -29,11 +29,11 @@ var PSS_pod_level_control = []string{
 	"Host Namespaces",
 	"HostPath Volumes",
 	"Sysctls",
-	"AppArmor",
 	"Volume Types",
 }
 
 var PSS_container_level_control = []string{
+	"AppArmor",
 	"Capabilities",
 	"Privileged Containers",
 	"Host Ports",
@@ -88,7 +88,7 @@ var PSS_control_name_to_ids = map[string][]string{
 		"sysctls",
 	},
 
-	// Metadata-level control
+	// Pod-level and Metadata-level control
 	"AppArmor": {
 		"appArmorProfile",
 	},
@@ -504,6 +504,42 @@ var PSS_controls = map[string][]RestrictedField{
 	"appArmorProfile": {
 		{
 			Path: "metadata.annotations",
+			AllowedValues: []interface{}{
+				nil,
+				"",
+				"runtime/default",
+				"localhost/*",
+			},
+		},
+		{
+			Path: "spec.securityContext.appArmorProfile.type",
+			AllowedValues: []interface{}{
+				nil,
+				"",
+				"runtime/default",
+				"localhost/*",
+			},
+		},
+		{
+			Path: "spec.containers[*].securityContext.appArmorProfile.type",
+			AllowedValues: []interface{}{
+				nil,
+				"",
+				"runtime/default",
+				"localhost/*",
+			},
+		},
+		{
+			Path: "spec.initContainers[*].securityContext.appArmorProfile.type",
+			AllowedValues: []interface{}{
+				nil,
+				"",
+				"runtime/default",
+				"localhost/*",
+			},
+		},
+		{
+			Path: "spec.ephemeralContainers[*].securityContext.appArmorProfile.type",
 			AllowedValues: []interface{}{
 				nil,
 				"",
