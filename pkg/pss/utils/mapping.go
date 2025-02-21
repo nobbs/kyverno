@@ -516,8 +516,8 @@ var PSS_controls = map[string][]RestrictedField{
 			AllowedValues: []interface{}{
 				nil,
 				"",
-				"runtime/default",
-				"localhost/*",
+				"RuntimeDefault",
+				"Localhost",
 			},
 		},
 		{
@@ -525,8 +525,8 @@ var PSS_controls = map[string][]RestrictedField{
 			AllowedValues: []interface{}{
 				nil,
 				"",
-				"runtime/default",
-				"localhost/*",
+				"RuntimeDefault",
+				"Localhost",
 			},
 		},
 		{
@@ -534,8 +534,8 @@ var PSS_controls = map[string][]RestrictedField{
 			AllowedValues: []interface{}{
 				nil,
 				"",
-				"runtime/default",
-				"localhost/*",
+				"RuntimeDefault",
+				"Localhost",
 			},
 		},
 		{
@@ -543,8 +543,8 @@ var PSS_controls = map[string][]RestrictedField{
 			AllowedValues: []interface{}{
 				nil,
 				"",
-				"runtime/default",
-				"localhost/*",
+				"RuntimeDefault",
+				"Localhost",
 			},
 		},
 	},
